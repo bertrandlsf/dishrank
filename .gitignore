@@ -14,3 +14,15 @@ Icon
 .TemporaryItems
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+# Dependencies
+node_modules/
+
+# Database
+*.db
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Environment
+.env
