@@ -13,4 +13,16 @@ Icon
 .fseventsd
 .TemporaryItems
 .VolumeIcon.icns
-.com.apple.timemachine.donotpresentbackend/node_modules/
+.com.apple.timemachine.donotpresent
+# Dependencies
+node_modules/
+
+# Database
+*.db
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Environment
+.env
