@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Accueil() {
+function Accueil({ setPage }) {
   const [recherche, setRecherche] = useState('')
   const [resultats, setResultats] = useState([])
 
@@ -30,7 +30,10 @@ function Accueil() {
         {recherche && resultats.length === 0 && (
           <div className="mt-4 text-center text-gray-500">
             Aucun plat trouvé.{' '}
-            <span className="text-green-600 font-semibold cursor-pointer">
+            <span
+              onClick={() => setPage('ajouter')}
+              className="text-green-600 font-semibold cursor-pointer hover:underline"
+            >
               Ajouter ce plat ?
             </span>
           </div>
