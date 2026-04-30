@@ -25,8 +25,6 @@ function AjouterPlat({ setPage }) {
       formData.append('nom', nom)
       formData.append('restaurantNom', restaurant)
       formData.append('photo', photo)
-      formData.append('note', note)
-      formData.append('commentaire', commentaire)
 
       const response = await fetch('/api/plats', {
         method: 'POST',
@@ -36,6 +34,17 @@ function AjouterPlat({ setPage }) {
       const data = await response.json()
 
       if (response.ok) {
+        // Sauvegarder l'avis initial
+        await fetch('/api/avis', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            platId: data.id,
+            note: note,
+            commentaire: commentaire
+          })
+        })
+
         setPage('accueil')
       } else {
         setErreur(data.message || 'Une erreur est survenue.')

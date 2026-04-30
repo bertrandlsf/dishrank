@@ -87,13 +87,17 @@ function Plat({ plat, setPage }) {
           🍽️ {details.restaurant.nom}
         </p>
 
-        <p className="text-yellow-400 text-2xl mb-6">
-          {'★'.repeat(Math.round(details.noteMoyenne))}
-          {'☆'.repeat(5 - Math.round(details.noteMoyenne))}
-          <span className="text-gray-500 text-base ml-2">
-            ({details.noteMoyenne}/5)
-          </span>
-        </p>
+        {details.noteMoyenne !== null ? (
+          <p className="text-yellow-400 text-2xl mb-6">
+            {'★'.repeat(Math.round(details.noteMoyenne))}
+            {'☆'.repeat(5 - Math.round(details.noteMoyenne))}
+            <span className="text-gray-500 text-base ml-2">
+              ({details.noteMoyenne}/5)
+            </span>
+          </p>
+        ) : (
+          <p className="text-gray-400 mb-6">Aucune note pour l'instant</p>
+        )}
 
         <h2 className="text-xl font-bold text-gray-700 mb-4">
           Donner un avis
