@@ -1,7 +1,9 @@
+import Accueil from './pages/Accueil'
+
 function App() {
   return (
     <div>
-      <h1>DishRank</h1>
+      <Accueil />
     </div>
   )
 }
